@@ -1,0 +1,35 @@
+{% extends 'layout/user_sign.html.twig' %}
+
+{% block title %}
+  Register
+{% endblock %}
+
+{% block content %}
+  <div class="container" style="width: 32%; margin:auto; margin-top: 80px">
+    <h1>
+      Inscription
+    </h1>
+    {{ form_start(registrationForm) }}
+    {{ form_row(registrationForm.surname) }}
+    {{ form_row(registrationForm.name) }}
+    {{ form_row(registrationForm.category) }}
+    {{ form_row(registrationForm.email) }}
+    {{
+      form_row(
+        registrationForm.plainPassword,
+        {
+          label: 'Password'
+        }
+      )
+    }}
+    {{ form_row(registrationForm.agreeTerms) }}
+    <div class="button" style="display: flex; justify-content: center;">
+      <button type="submit"
+        class="btn center-block"
+        style="background-color:rgb(65, 117, 230); color: rgb(247, 247, 247); width: 60%; border-radius: 10px; margin-top: 20px;">
+        Se connecter
+      </button>
+    </div>
+  </div>
+  {{ form_end(registrationForm) }}
+{% endblock %}

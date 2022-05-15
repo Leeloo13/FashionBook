@@ -1,0 +1,39 @@
+{% extends 'layout/site.html.twig' %}
+
+{% block title %}
+  FashionBookParis | Publication show
+{% endblock %}
+
+{% block stylesheets %}
+  {{ parent() }}
+  {{ encore_entry_link_tags('post_show') }}
+{% endblock %}
+
+{% block javascripts %}
+  {{ parent() }}
+  {{ encore_entry_script_tags('post_show') }}
+{% endblock %}
+
+{% block content %}
+  <article>
+    <div class="post-author">
+      <span><b>jane doe</b></span>
+      <span>
+        <button>Share</button>
+        <span>count like</span>
+        <i>heart</i>
+        <button>like</button>
+      </span>
+    </div>
+    <img src="{{ vich_uploader_asset(post) }}" alt="" />
+    <h1>
+      {{ post.title }}
+    </h1>
+    <p class="post-description">
+      {{ post.description }}
+    </p>
+    <div class="post-problem">
+      <span>Signaler un problème</span>
+    </div>
+  </article>
+{% endblock %}

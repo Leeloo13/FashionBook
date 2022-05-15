@@ -1,0 +1,39 @@
+article {
+  width: min(100%, 768px);
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 25px;
+  margin: 50px;
+}
+
+.post-author {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+article img {
+  width: 100%;
+  height: auto;
+}
+
+.post-problem {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+article img,
+h1,
+.post-description,
+.post-problem {
+  padding-left: 30px;
+  padding-right: 30px;
+}

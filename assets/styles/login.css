@@ -1,0 +1,50 @@
+.connexion {
+  width: min(100%, 500px);
+}
+
+.connexion form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+input {
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: min(100%, 380px);
+  background-color: #f8f8f8;
+  color: #5e5e5e;
+  border: 2px solid #e2dede;
+  padding: 15px;
+}
+
+a,
+.connexion p {
+  font-size: 18px;
+}
+
+input[type="submit"] {
+  width: min(100%, 340px);
+  background-color: #186ab6;
+  color: white;
+  cursor: pointer;
+  padding: 20px;
+}
+
+.connexion a {
+  color: #186ab6;
+  text-decoration: none;
+}
+
+.connexion a:hover {
+  color: rgba(24 106 182/70%);
+  text-decoration: underline #186ab6;
+}

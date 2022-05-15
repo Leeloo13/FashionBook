@@ -1,0 +1,21 @@
+header {
+  width: 100%;
+  background-color: #606060;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  row-gap: 20px;
+  color: white;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+.sign-header p {
+  font-size: 25px;
+  width: min(100%, 600px);
+  text-align: center;
+}
