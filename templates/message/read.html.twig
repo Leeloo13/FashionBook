@@ -11,7 +11,6 @@
         margin-top: 100px;
         width: 50%;
     }
-
     .offcanvas-body{
        margin-top: 50px;
        font-size: 16px;
@@ -20,18 +19,42 @@
         text-decoration: none;
         color: black;
     }
+
+    .content-message{
+        background-color:#b5cde0;
+        padding: 5px;
+        margin-top: 10px;
+    }
+
+    .col{
+    }
 </style>
 
-<div class="container">
-    <h1>Envoyer un message : </h1>
+      
+{% for message in app.flashes("message") %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  {{ message }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" area-label="close"></button>
+</div>
+{% endfor %}
 
-    {{ form(form) }}
+<div class="container">
+    <h1>Messagerie</h1>
+    <h2>{{ message.title }}</h2>
+    <p>Message de : {{ message.sender.email }}</p>
+    <p>{{ message.createdAt|date }}</p>
+    <div>{{ message.message }}</div>
 
     <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
         Voir mes dossiers
       </a>
 
+      <a class="btn btn-primary" href="{{ path('received') }}" role="button">
+        Retour à la boite de réception
+      </a>
       
+
+ 
       <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header">
           <h2 class="offcanvas-title" id="offcanvasExampleLabel">Mes dossiers</h2>
@@ -42,15 +65,15 @@
              <a href="{{ path('message') }}">Acceuil</a>
          </div><hr>
          <div class="list">
-            <a href="{{ path('message') }}">Boîte de récéption {{ app.user.received | length }}</a>
+            <a href="{{ path('received') }}">Boîte de récéption {{ app.user.received | length }}</a>
         </div><hr>
         <div class="list">
-            <a href="{{ path('sent') }}">Elements envoyés</a>
+            <a href="{{ path('sent') }}">Elements envoyés {{ app.user.sent | length }}</a>
         </div><hr>
         </div>
       </div>
 
-</div>
+    </div>
 
 {% endblock %}
 
