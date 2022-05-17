@@ -12,7 +12,7 @@
     }
    
     .block-container{
-        width: 60%;
+        width: 1200px;
         margin-left: 350px;
         margin: auto; 
         margin-top: -600px;
@@ -161,6 +161,22 @@
         font-size: 20px;
         margin-left: 10px;
     }
+
+    @media screen and (max-width: 1280px)
+{
+    .block-container{
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .photo-all{
+        flex-direction: column;
+    }
+
+    .photo-fbp{
+        margin:auto;
+    }
+}
 </style>
 <body>
     <div class="block-container">
@@ -189,7 +205,6 @@
                     <a href="{{ path('profilpage') }}" ><p>{{ articleFb.user.surname }} {{ articleFb.user.name }}</p></a>
                             
                     <div class="action">
-                        <a href="{{ path('publication_send', {'id':articleFb.id}) }}" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="{{ asset('icones/partager.png') }}" alt="" width="36px"></a>
 
                         <a href="{{ path('create', {'id':articleFb.id}) }}"><img src="{{ asset('icones/partager.png') }}" alt="" width="36px"></a>
                         
@@ -216,46 +231,6 @@
             </div>
 
 
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Envoyer par mail </h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-
-            <div class="article">
-                <div class="name-user-fb">
-                    <a href="{{ path('profilpage') }}" ><p>{{ articleFb.user.surname }} {{ articleFb.user.name }}</p></a>                                    
-                </div>
-                
-                <div class="photo-all">
-                    <div class="photo-fb">
-                        <!-- <img src="{{app.request.basepath}}/uploads/{{articleFb.photo}}" alt="">  -->
-                        <img src="{{ asset('/uploads/' ~ articleFb.photo) }} " alt="" height="200px">
-                    </div>
-
-                    <div class="content-date">
-                        <div class="content-fb">
-                            <p>{{ articleFb.contentFbp | raw }}</p>
-                        </div>
-                    </div>                    
-                </div>
-                   
-                    <div class="metadata">Le {{ articleFb.createdAt | date('d/m/Y') }} à {{ articleFb.createdAt | date('H:i') }}</div>                              
-            </div>
-            
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-          <button type="button" class="btn btn-primary">Envoyer</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
         {% endfor %}
     </div>

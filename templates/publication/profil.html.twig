@@ -10,7 +10,7 @@
         }
 
         .container-profil{
-            width:55%;
+            width:1200px;
             margin: auto;
             height: 200px;
             background-image: url('pictures/5.jpg');
@@ -21,7 +21,7 @@
             margin-top: -50px;
         }
         .identity{
-            width: 55%;
+            width: 1200px;
             display:flex;
             margin: auto;
             padding-left: 30px;
@@ -64,6 +64,35 @@
             align-items: center;
             color: black;
         }
+
+        @media screen and (max-width: 1280px)
+    {
+        .container-profil{
+            width: 90%;
+        }
+        .identity{
+            flex-direction: column;
+            margin-top: -100px;
+            width: 90%;
+        }
+
+        .photo-profil{
+            margin: auto;
+        }
+
+        .info-user{
+            text-align: center;
+        }
+
+        .social-network{
+            justify-content: center;
+        }
+
+        .banner-menu{
+            width: 90%;
+            justify-content: center;
+        }
+    }
 
     </style>
 <body>
